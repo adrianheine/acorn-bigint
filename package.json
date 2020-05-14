@@ -5,6 +5,8 @@
   "contributors": [
     "Adrian Heine <mail@adrianheine.de>"
   ],
+  "main": "dist/acorn-bigint.js",
+  "module": "dist/acorn-bigint.mjs",
   "engines": {
     "node": ">=4.8.2"
   },
@@ -14,6 +16,8 @@
   },
   "license": "MIT",
   "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepare": "npm run build",
     "test": "mocha",
     "test:test262": "node run_test262.js",
     "lint": "eslint -c .eslintrc.json ."
@@ -21,12 +25,13 @@
   "peerDependencies": {
     "acorn": "^6.0.0"
   },
-  "version": "0.4.0",
+  "version": "0.4.1",
   "devDependencies": {
     "acorn": "^6.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^8.0.1",
     "mocha": "^6.0.2",
+    "rollup": "^2.10.0",
     "test262": "git+https://github.com/tc39/test262.git#611919174ffe060503691a0c7e3eb2a65b646124",
     "test262-parser-runner": "^0.5.0"
   }

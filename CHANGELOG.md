@@ -1,3 +1,7 @@
+## 0.410 (2020-05-14)
+
+* Migrate to ESM
+
 ## 0.4.0 (2019-04-04)
 
 * Make compatible with acorn-numeric-separator

@@ -1,10 +1,8 @@
-"use strict"
+export default function bigInt(Parser) {
+  const acorn = Parser.acorn || require("acorn")
+  const tt = acorn.tokTypes
+  const isIdentifierStart = acorn.isIdentifierStart
 
-const acorn = require("acorn")
-const tt = acorn.tokTypes
-const isIdentifierStart = acorn.isIdentifierStart
-
-module.exports = function(Parser) {
   return class extends Parser {
     parseLiteral(value) {
       const node = super.parseLiteral(value)

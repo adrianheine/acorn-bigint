@@ -8,11 +8,20 @@ It implements support for arbitrary precision integers as defined in the stage 3
 
 ## Usage
 
-This module provides a plugin that can be used to extend the Acorn `Parser` class:
+This module provides a plugin that can be used to extend the Acorn `Parser` class.
+You can either choose to use it via CommonJS (for example in Node.js) like this
 
 ```javascript
 const {Parser} = require('acorn');
 const bigInt = require('acorn-bigint');
+Parser.extend(bigInt).parse('100n');
+```
+
+or as an ECMAScript module like this:
+
+```javascript
+import {Parser} from 'acorn';
+import bigInt from 'path/to/acorn-bigint.mjs';
 Parser.extend(bigInt).parse('100n');
 ```
 
